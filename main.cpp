@@ -1,13 +1,12 @@
 #include <iostream>
-#include <thread>
 
 #include "Matrix.hpp"
 
+
 int	main(int charc, char **argv)
 {
-	std::cout << std::thread::hardware_concurrency() << '\n';
-	Matrix a = Matrix::createRandomMatrix(5, 2);
-	Matrix b = Matrix::createRandomMatrix(2, 5);
+	Matrix a = Matrix::createRandomMatrix(1, 20);
+	Matrix b = Matrix::createRandomMatrix(20, 1);
 	Matrix c = a * b;
 	std::cout << "a:\n";
 	a.print();

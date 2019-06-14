@@ -3,6 +3,9 @@
 
 #include <iostream>
 #include <random>
+#include <thread>
+
+#define NUM_THREADS std::thread::hardware_concurrency()
 
 class Matrix
 {
@@ -13,11 +16,12 @@ class Matrix
 	public:
 		Matrix(unsigned, unsigned);
 		~Matrix();
-		int operator()(int, int);
+		int operator()(unsigned, unsigned);
 		Matrix operator*(Matrix);
 		static Matrix createRandomMatrix(unsigned, unsigned);
 		int* createRandomRow(unsigned);
 		void print();
+		void fillrows(Matrix, Matrix&, unsigned, unsigned);
 };
 
 #endif
